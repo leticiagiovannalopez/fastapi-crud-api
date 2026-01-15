@@ -2,7 +2,7 @@
 
 API REST para gerenciamento de tarefas (criar, listar, atualizar e deletar) desenvolvida com FastAPI e SQLAlchemy.
 
-## Stack
+## Tecnologias
 
 - FastAPI
 - SQLAlchemy + SQLite
