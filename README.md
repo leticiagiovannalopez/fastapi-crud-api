@@ -10,6 +10,15 @@ API REST para gerenciamento de tarefas (criar, listar, atualizar e deletar) dese
 
 ## Como rodar o projeto
 
+1. Crie e ative o ambiente virtual:
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+```
+
+2. Instale as dependências e rode a API:
+
 ```bash
 pip install -r requirements.txt
 uvicorn main:app --reload
