@@ -9,6 +9,10 @@ Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title="CRUD Task API")
 
+@app.get("/")
+def home():
+    return {"mesagem": "API no ar. Acesse /docs para testar os endpoints. "}
+
 def get_db():
     db = SessionLocal()
     try:
@@ -52,7 +56,7 @@ def update_task(task_id: int, payload: TaskUpdate, db: Session = Depends(get_db)
     db.refresh(task)
     return task
 
-@app.delete("/task/{task_id}")
+@app.delete("/tasks/{task_id}")
 def delete_task(task_id: int, db: Session = Depends(get_db)):
     task = db.query(Task).filter(Task.id == task_id).first()
     if not task:
